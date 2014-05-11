@@ -32,6 +32,9 @@ subDt[, c("Date","Time"):=NULL]
 colNames <- names(subDt)
 setcolorder(subDt, c(colNames[8], colNames[1:7]))
 
+# Start a png() device to save plot
+png(file="./plot3.png", bg="transparent", width=480, height=480)
+
 # Plot Sub_metering_1, _2, _3 vs. datetime
 m1 <- as.numeric(subDt$Sub_metering_1)
 m2 <- as.numeric(subDt$Sub_metering_2)
@@ -43,6 +46,5 @@ axis.POSIXct(1, subDt$datetime, labels=TRUE)
 legend("topright", lty=1, col = c("black", "red", "blue"), 
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
-# Save plots to plot3.png
-dev.copy(png, file="./plot3.png", bg="transparent", width=480, height=480)
+# Turn off png() device
 dev.off()

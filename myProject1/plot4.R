@@ -32,6 +32,9 @@ subDt[, c("Date","Time"):=NULL]
 colNames <- names(subDt)
 setcolorder(subDt, c(colNames[8], colNames[1:7]))
 
+# Start a png() device to save plot
+png(file="./plot4.png", bg="transparent", width=480, height=480)
+
 # Plot Multiple plots in Grid
 par(mfrow=c(2,2))
 time <- as.numeric(subDt$datetime)
@@ -57,6 +60,5 @@ grp <- as.numeric(subDt$Global_reactive_power)
 plot(time, grp, type="l", xlab="datetime", ylab="Global_reactive_power", xaxt="n")
 axis.POSIXct(1, subDt$datetime, labels=TRUE)
 
-# Save Grid plots to plot4.png
-dev.copy(png, file="./plot4.png", bg="transparent", width=480, height=480))
+# Turn off png() device
 dev.off()
