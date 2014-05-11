@@ -4,8 +4,8 @@
 # plot3.R
 
 
-# Change working directory & Create data directory if non-existent
-setwd("~/datasciencecoursera/Exploratory_Data_Analysis/Course_Project_1")
+# Change to working directory & Create data directory if non-existent
+setwd("~/ExData_Plotting1/myProject1")
 
 if (!file.exists("data")) {
   dir.create("data")
@@ -44,5 +44,5 @@ legend("topright", lty=1, col = c("black", "red", "blue"),
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 # Save plots to plot3.png
-dev.copy(png, file="./plot3.png", width = 636, height = 606)
+dev.copy(png, file="./plot3.png", bg="transparent", width=480, height=480)
 dev.off()

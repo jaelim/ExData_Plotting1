@@ -4,8 +4,8 @@
 # plot2.R
 
 
-# Change working directory & Create data directory if non-existent
-setwd("~/datasciencecoursera/Exploratory_Data_Analysis/Course_Project_1")
+# Change to working directory & Create data directory if non-existent
+setwd("~/ExData_Plotting1/myProject1")
 
 if (!file.exists("data")) {
   dir.create("data")
@@ -39,5 +39,5 @@ plot(time, gap, type="l", xlab="", ylab="Global Active Power (kilowatts)", xaxt=
 axis.POSIXct(1, subDt$datetime, labels=TRUE)
 
 # Save plot to plot2.png
-dev.copy(png, file="./plot2.png")
+dev.copy(png, bg="transparent", file="./plot2.png", width=480, height=480)
 dev.off()

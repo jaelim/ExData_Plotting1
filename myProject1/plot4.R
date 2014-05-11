@@ -4,8 +4,8 @@
 # plot4.R
 
 
-# Change working directory & Create data directory if non-existent
-setwd("~/datasciencecoursera/Exploratory_Data_Analysis/Course_Project_1")
+# Change to working directory & Create data directory if non-existent
+setwd("~/ExData_Plotting1/myProject1")
 
 if (!file.exists("data")) {
   dir.create("data")
@@ -58,5 +58,5 @@ plot(time, grp, type="l", xlab="datetime", ylab="Global_reactive_power", xaxt="n
 axis.POSIXct(1, subDt$datetime, labels=TRUE)
 
 # Save Grid plots to plot4.png
-dev.copy(png, file="./plot4.png", width = 636, height = 606)
+dev.copy(png, file="./plot4.png", bg="transparent", width=480, height=480))
 dev.off()
