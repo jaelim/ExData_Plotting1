@@ -32,12 +32,14 @@ subDt[, c("Date","Time"):=NULL]
 colNames <- names(subDt)
 setcolorder(subDt, c(colNames[8], colNames[1:7]))
 
+# Start a png() device to save plot
+png(file="./plot2.png", bg="transparent", width=480, height=480)
+
 # Plot Global Active Power vs. datetime
 time <- as.numeric(subDt$datetime)
 gap <- as.numeric(subDt$Global_active_power)
 plot(time, gap, type="l", xlab="", ylab="Global Active Power (kilowatts)", xaxt="n")
 axis.POSIXct(1, subDt$datetime, labels=TRUE)
 
-# Save plot to plot2.png
-dev.copy(png, bg="transparent", file="./plot2.png", width=480, height=480)
+# Turn off png() device
 dev.off()

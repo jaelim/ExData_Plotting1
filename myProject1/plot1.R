@@ -32,11 +32,13 @@ subDt[, c("Date","Time"):=NULL]
 colNames <- names(subDt)
 setcolorder(subDt, c(colNames[8], colNames[1:7]))
 
+# Start a png() device to save plot
+png(file="./plot1.png", bg="transparent", width=480, height=480)
+
 # Plot Global Active Power Histogram
 gap <- as.numeric(subDt$Global_active_power)
 hist(gap, col="red", main="Global Active Power", 
      xlab="Global Active Power (kilowatts)", ylab="Frequency")
 
-# Save histogram to plot1.png
-dev.copy(png, bg="transparent", file="./plot1.png", width=480, height=480)
+# Turn off png() device
 dev.off()
