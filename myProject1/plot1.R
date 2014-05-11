@@ -4,8 +4,8 @@
 # plot1.R
 
 
-# Change working directory & Create data directory if non-existent
-setwd("~/datasciencecoursera/Exploratory_Data_Analysis/Course_Project_1")
+# Change to working directory & Create data directory if non-existent
+setwd("~/ExData_Plotting1/myProject1")
 
 if (!file.exists("data")) {
   dir.create("data")
@@ -38,5 +38,5 @@ hist(gap, col="red", main="Global Active Power",
      xlab="Global Active Power (kilowatts)", ylab="Frequency")
 
 # Save histogram to plot1.png
-dev.copy(png, file="./plot1.png")
+dev.copy(png, bg="transparent", file="./plot1.png", width=480, height=480)
 dev.off()
